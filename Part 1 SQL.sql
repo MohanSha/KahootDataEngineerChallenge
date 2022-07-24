@@ -1,7 +1,7 @@
-Q1.Write an SQL query using vendor neutral ANSI SQL to find the
-user_id, current name and current email address for all users.Do not
-worry too much about the performance of the query, favour
-readability.
+/*
+Q1.Write an SQL query using vendor neutral ANSI SQL to find the user_id, current name and current email address for all users.
+Do not worry too much about the performance of the query, favour readability.
+*/
 
 SELECT user_id, name, email
 FROM user_changes
@@ -13,9 +13,10 @@ WHERE created IN (
 
 --------------------------------------------------------------------------------------
 
-Q2.Write an SQL query using vendor neutral ANSI SQLto find the
-median time between the second and third profile edit.Do not worry
-too much about the performance of the query, favour readability.
+/*
+Q2.Write an SQL query using vendor neutral ANSI SQLto find the median time between the second and third profile edit.
+Do not worry too much about the performance of the query, favour readability.
+*/
 
 SELECT TOP 1
   FLOOR(PERCENTILE_CONT(0.5)
