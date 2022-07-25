@@ -25,7 +25,7 @@ SELECT TOP 1
     WITHIN GROUP (ORDER BY Mins) OVER()/60 -
   FLOOR(PERCENTILE_CONT(0.5)
     WITHIN GROUP (ORDER BY Mins) OVER()/60))*60,0) as Median_Minutes
-FROM (SELECT tbl_row2.user_id, tbl_row2.created as date1, tbl_row2.created as date2, DATEDIFF(minute,tbl_row2.created,tbl_row3.created) as Mins
+FROM (SELECT tbl_row2.user_id, tbl_row2.created as date1, tbl_row3.created as date2, DATEDIFF(minute,tbl_row2.created,tbl_row3.created) as Mins
 FROM user_changes tbl_row2
 FULL JOIN (SELECT user_id, created
 FROM user_changes) tbl_row3 ON tbl_row2.user_id = tbl_row2.user_id
